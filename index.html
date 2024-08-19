@@ -4,13 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="추억거리">
-<meta property="og:image" content="https://i.namu.wiki/i/jMuF1wjWr7c4iVtro28j2zela9twbVoPB5niogedacu5-mYuywbYPI6spWSirAGwh0BlAlTP2Lder3YfW1NYWC_T_HrYldBdJxPWuBm6ICQ44qEKts81L7s_et7ScYoHqjqtIEbDqpcGQWKBcl3EYA.webp">
 <script>
 const invite = new URLSearchParams(window.location.search).get('invite');
 if (invite) {
-    const meta = document.createElement('meta');
+    let meta = document.createElement('meta');
     meta.httpEquiv = 'refresh';
     meta.content = `0; URL=life.forlegacy.app://memorial?invite=${invite}`;
+    document.head.appendChild(meta);
+    meta = document.createElement('meta');
+    meta.property = "og:image";
+    meta.content = "https://i.namu.wiki/i/jMuF1wjWr7c4iVtro28j2zela9twbVoPB5niogedacu5-mYuywbYPI6spWSirAGwh0BlAlTP2Lder3YfW1NYWC_T_HrYldBdJxPWuBm6ICQ44qEKts81L7s_et7ScYoHqjqtIEbDqpcGQWKBcl3EYA.webp";
     document.head.appendChild(meta);
 }
 </script>
