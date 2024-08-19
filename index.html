@@ -6,8 +6,11 @@ async function replacePage() {
   const invite = new URLSearchParams(window.location.search).get('invite');
   if (invite) {
       let response = await fetch(`https://cyqrsvtqexkzngdereuk.supabase.co/functions/v1/link?invite=${invite}`)
+      const div = document.createElement('div');
+      div.innerHTML = await response.text();
+      const html = tempDiv.querySelector('pre').innerHTML;
       document.open()
-      document.write(await response.text())
+      document.write(html)
       document.close()
   }
 }
