@@ -7,7 +7,7 @@ async function replacePage() {
   if (invite) {
       let response = await fetch(`https://cyqrsvtqexkzngdereuk.supabase.co/functions/v1/link?invite=${invite}`)
       document.open()
-      document.write(response.body)
+      document.write(await response.text())
       document.close()
   }
 }
