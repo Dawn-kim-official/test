@@ -2,13 +2,16 @@
 <html>
 <head>
 <script>
-const invite = new URLSearchParams(window.location.search).get('invite');
-if (invite) {
-    let response = await fetch(`https://cyqrsvtqexkzngdereuk.supabase.co/functions/v1/link?invite=${invite}`)
-    document.open()
-    document.write(response.body)
-    document.close()
+async function replacePage() {
+  const invite = new URLSearchParams(window.location.search).get('invite');
+  if (invite) {
+      let response = await fetch(`https://cyqrsvtqexkzngdereuk.supabase.co/functions/v1/link?invite=${invite}`)
+      document.open()
+      document.write(response.body)
+      document.close()
+  }
 }
+replacePage()
 </script>
 </head>
 </html>
