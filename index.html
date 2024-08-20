@@ -5,16 +5,15 @@
 async function replacePage() {
   const invite = new URLSearchParams(window.location.search).get('invite');
   if (invite) {
-      let response = await fetch(`https://cyqrsvtqexkzngdereuk.supabase.co/functions/v1/link?invite=${invite}`)
-      const div = document.createElement('div');
-      div.innerHTML = await response.text();
-      const html = tempDiv.querySelector('pre').innerHTML;
-      document.open()
-      document.write(html)
-      document.close()
+    console.log(invite)
+    let response = await fetch(`https://cyqrsvtqexkzngdereuk.supabase.co/functions/v1/link?invite=${invite}`)
+    data = await response.json()
+    console.log(data.html)
+    const html = data.html
+    document.write(html)
   }
 }
-replacePage()
+replacePage(
 </script>
 </head>
 </html>
